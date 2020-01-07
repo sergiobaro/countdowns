@@ -14,6 +14,8 @@
 		D9DF8BF323C4703F003645AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */; };
 		D9DF8BFE23C4703F003645AD /* countdownsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BFD23C4703F003645AD /* countdownsTests.swift */; };
 		D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */; };
+		D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C1123C474FE003645AD /* AddCountdownView.swift */; };
+		D9DF8C1623C47918003645AD /* EditCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C1523C47918003645AD /* EditCountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		D9DF8BFD23C4703F003645AD /* countdownsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countdownsTests.swift; sourceTree = "<group>"; };
 		D9DF8BFF23C4703F003645AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListView.swift; sourceTree = "<group>"; };
+		D9DF8C1123C474FE003645AD /* AddCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownView.swift; sourceTree = "<group>"; };
+		D9DF8C1523C47918003645AD /* EditCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCountdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		D9DF8C0923C47099003645AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D9DF8C1323C4790C003645AD /* EditCountdown */,
+				D9DF8C0F23C474F2003645AD /* AddCountdown */,
 				D9DF8C0A23C470A7003645AD /* CountdownsList */,
 			);
 			path = Modules;
@@ -127,6 +133,38 @@
 			isa = PBXGroup;
 			children = (
 				D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9DF8C0F23C474F2003645AD /* AddCountdown */ = {
+			isa = PBXGroup;
+			children = (
+				D9DF8C1023C474F5003645AD /* View */,
+			);
+			path = AddCountdown;
+			sourceTree = "<group>";
+		};
+		D9DF8C1023C474F5003645AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9DF8C1123C474FE003645AD /* AddCountdownView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9DF8C1323C4790C003645AD /* EditCountdown */ = {
+			isa = PBXGroup;
+			children = (
+				D9DF8C1423C47910003645AD /* View */,
+			);
+			path = EditCountdown;
+			sourceTree = "<group>";
+		};
+		D9DF8C1423C47910003645AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9DF8C1523C47918003645AD /* EditCountdownView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */,
+				D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */,
+				D9DF8C1623C47918003645AD /* EditCountdownView.swift in Sources */,
 				D9DF8BE923C4703F003645AD /* SceneDelegate.swift in Sources */,
 				D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */,
 				D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */,
