@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */; };
+		D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */; };
+		D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */; };
+		D9C15A2323C9D2B5003512B9 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C15A2223C9D2B5003512B9 /* Swinject.framework */; };
+		D9C15A2723C9D55A003512B9 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A2623C9D55A003512B9 /* Inject.swift */; };
 		D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BE623C4703F003645AD /* AppDelegate.swift */; };
 		D9DF8BE923C4703F003645AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BE823C4703F003645AD /* SceneDelegate.swift */; };
 		D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BEA23C4703F003645AD /* AppView.swift */; };
@@ -15,7 +20,6 @@
 		D9DF8BFE23C4703F003645AD /* countdownsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BFD23C4703F003645AD /* countdownsTests.swift */; };
 		D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */; };
 		D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C1123C474FE003645AD /* AddCountdownView.swift */; };
-		D9DF8C1623C47918003645AD /* EditCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C1523C47918003645AD /* EditCountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownPresenter.swift; sourceTree = "<group>"; };
+		D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsRepository.swift; sourceTree = "<group>"; };
+		D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListPresenter.swift; sourceTree = "<group>"; };
+		D9C15A2223C9D2B5003512B9 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		D9C15A2623C9D55A003512B9 /* Inject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inject.swift; sourceTree = "<group>"; };
 		D9DF8BE323C4703F003645AD /* countdowns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = countdowns.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DF8BE623C4703F003645AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9DF8BE823C4703F003645AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +50,6 @@
 		D9DF8BFF23C4703F003645AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListView.swift; sourceTree = "<group>"; };
 		D9DF8C1123C474FE003645AD /* AddCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownView.swift; sourceTree = "<group>"; };
-		D9DF8C1523C47918003645AD /* EditCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCountdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C15A2323C9D2B5003512B9 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +71,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9C15A1A23C9B020003512B9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D9C15A1B23C9B024003512B9 /* Countdowns */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D9C15A1B23C9B024003512B9 /* Countdowns */ = {
+			isa = PBXGroup;
+			children = (
+				D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */,
+			);
+			path = Countdowns;
+			sourceTree = "<group>";
+		};
+		D9C15A2123C9D2B5003512B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9C15A2223C9D2B5003512B9 /* Swinject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9C15A2823C9D84D003512B9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D9C15A2623C9D55A003512B9 /* Inject.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		D9DF8BDA23C4703F003645AD = {
 			isa = PBXGroup;
 			children = (
 				D9DF8BE523C4703F003645AD /* countdowns */,
 				D9DF8BFC23C4703F003645AD /* countdownsTests */,
 				D9DF8BE423C4703F003645AD /* Products */,
+				D9C15A2123C9D2B5003512B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +127,8 @@
 			children = (
 				D9DF8C0823C47055003645AD /* App */,
 				D9DF8C0923C47099003645AD /* Modules */,
+				D9C15A1A23C9B020003512B9 /* Repositories */,
+				D9C15A2823C9D84D003512B9 /* Common */,
 				D9DF8BF423C4703F003645AD /* Info.plist */,
 			);
 			path = countdowns;
@@ -114,7 +158,6 @@
 		D9DF8C0923C47099003645AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D9DF8C1323C4790C003645AD /* EditCountdown */,
 				D9DF8C0F23C474F2003645AD /* AddCountdown */,
 				D9DF8C0A23C470A7003645AD /* CountdownsList */,
 			);
@@ -124,49 +167,19 @@
 		D9DF8C0A23C470A7003645AD /* CountdownsList */ = {
 			isa = PBXGroup;
 			children = (
-				D9DF8C0B23C470B0003645AD /* View */,
+				D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */,
+				D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */,
 			);
 			path = CountdownsList;
-			sourceTree = "<group>";
-		};
-		D9DF8C0B23C470B0003645AD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D9DF8C0F23C474F2003645AD /* AddCountdown */ = {
 			isa = PBXGroup;
 			children = (
-				D9DF8C1023C474F5003645AD /* View */,
+				D9DF8C1123C474FE003645AD /* AddCountdownView.swift */,
+				D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */,
 			);
 			path = AddCountdown;
-			sourceTree = "<group>";
-		};
-		D9DF8C1023C474F5003645AD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D9DF8C1123C474FE003645AD /* AddCountdownView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D9DF8C1323C4790C003645AD /* EditCountdown */ = {
-			isa = PBXGroup;
-			children = (
-				D9DF8C1423C47910003645AD /* View */,
-			);
-			path = EditCountdown;
-			sourceTree = "<group>";
-		};
-		D9DF8C1423C47910003645AD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D9DF8C1523C47918003645AD /* EditCountdownView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +192,7 @@
 				D9DF8BDF23C4703F003645AD /* Sources */,
 				D9DF8BE023C4703F003645AD /* Frameworks */,
 				D9DF8BE123C4703F003645AD /* Resources */,
+				D9C15A2023C9D18F003512B9 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -264,16 +278,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D9C15A2023C9D18F003512B9 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = Carthage;
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9DF8BDF23C4703F003645AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */,
+				D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */,
+				D9C15A2723C9D55A003512B9 /* Inject.swift in Sources */,
 				D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */,
-				D9DF8C1623C47918003645AD /* EditCountdownView.swift in Sources */,
+				D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */,
 				D9DF8BE923C4703F003645AD /* SceneDelegate.swift in Sources */,
 				D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */,
+				D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */,
 				D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +470,10 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = U45ZNT55FZ;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = countdowns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +494,10 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = U45ZNT55FZ;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = countdowns/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
