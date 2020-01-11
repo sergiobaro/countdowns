@@ -20,6 +20,9 @@
 		D9DF8BFE23C4703F003645AD /* countdownsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BFD23C4703F003645AD /* countdownsTests.swift */; };
 		D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */; };
 		D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C1123C474FE003645AD /* AddCountdownView.swift */; };
+		D9EA8FDD23CA436200AB99D4 /* CountdownsMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA8FDC23CA436200AB99D4 /* CountdownsMemoryRepository.swift */; };
+		D9EA8FDF23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA8FDE23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift */; };
+		D9EA8FE223CA43B300AB99D4 /* Countdowns.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9EA8FE023CA43B300AB99D4 /* Countdowns.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		D9DF8BFF23C4703F003645AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListView.swift; sourceTree = "<group>"; };
 		D9DF8C1123C474FE003645AD /* AddCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownView.swift; sourceTree = "<group>"; };
+		D9EA8FDC23CA436200AB99D4 /* CountdownsMemoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsMemoryRepository.swift; sourceTree = "<group>"; };
+		D9EA8FDE23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsCoreDataRepository.swift; sourceTree = "<group>"; };
+		D9EA8FE123CA43B300AB99D4 /* Countdowns.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countdowns.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */,
+				D9EA8FDC23CA436200AB99D4 /* CountdownsMemoryRepository.swift */,
+				D9EA8FDE23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift */,
+				D9EA8FE023CA43B300AB99D4 /* Countdowns.xcdatamodeld */,
 			);
 			path = Countdowns;
 			sourceTree = "<group>";
@@ -306,6 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9EA8FDD23CA436200AB99D4 /* CountdownsMemoryRepository.swift in Sources */,
+				D9EA8FDF23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift in Sources */,
 				D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */,
 				D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */,
 				D9C15A2723C9D55A003512B9 /* Inject.swift in Sources */,
@@ -315,6 +326,7 @@
 				D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */,
 				D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */,
 				D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */,
+				D9EA8FE223CA43B300AB99D4 /* Countdowns.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +597,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9EA8FE023CA43B300AB99D4 /* Countdowns.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9EA8FE123CA43B300AB99D4 /* Countdowns.xcdatamodel */,
+			);
+			currentVersion = D9EA8FE123CA43B300AB99D4 /* Countdowns.xcdatamodel */;
+			path = Countdowns.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D9DF8BDB23C4703F003645AD /* Project object */;
 }

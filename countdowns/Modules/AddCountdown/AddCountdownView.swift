@@ -10,10 +10,7 @@ struct AddCountdownView: View {
         Section {
           TextField("Name", text: $presenter.name)
           DatePicker(selection: $presenter.date, displayedComponents: .date) {
-            Text("Date")
-          }
-          DatePicker(selection: $presenter.date, displayedComponents: .hourAndMinute) {
-            Text("Time")
+            Text("Date:")
           }
         }
         Section {

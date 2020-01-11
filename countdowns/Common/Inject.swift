@@ -9,7 +9,7 @@ class MainContainer {
   
   init() {
     self.container.register(CountdownsRepository.self) { _ in
-      CountdownsMemoryRepository()
+      CountdownsCoreDataRepository()
     }
     .inObjectScope(.container)
   }

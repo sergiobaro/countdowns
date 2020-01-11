@@ -2,6 +2,7 @@ import Foundation
 import Combine
 
 struct CountdownViewModel {
+  let countdowndId: UUID
   let name: String
   let date: String
 }
@@ -23,19 +24,24 @@ class CountdownsListPresenter: ObservableObject {
   }
   
   func removeCountdown(at index: Int) {
-    self.repository.removeCountdown(at: index)
+    let countdown = self.countdowns[index]
+    self.repository.remove(countdownId: countdown.countdowndId)
   }
 }
 
 private extension CountdownsListPresenter {
   
   func map(countdowns: [Countdown]) -> [CountdownViewModel] {
-    let df = DateFormatter()
-    df.dateStyle = .short
-    df.timeStyle = .short
-    
     return countdowns.map {
-      CountdownViewModel(name: $0.name, date: df.string(from: $0.date))
+      CountdownViewModel(
+        countdowndId: $0.countdownId,
+        name: $0.name,
+        date: "Days: \(self.days(from: $0.date))"
+      )
     }
+  }
+  
+  func days(from date: Date) -> Int {
+    return Calendar.current.dateComponents([.day], from: Date(), to: date).day ?? 0
   }
 }
