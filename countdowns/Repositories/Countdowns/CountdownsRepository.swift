@@ -11,6 +11,7 @@ struct Countdown {
 protocol CountdownsRepository {
   func add(countdown: Countdown)
   func remove(countdownId: UUID)
+  func countdown(countdownId: UUID) -> Countdown?
   func allCountdowns() -> AnyPublisher<[Countdown], Never>
   func removeAll()
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307EE23D37B1900A01354 /* CountdownDetailView.swift */; };
+		D98307F123D37F2000A01354 /* CountdownDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */; };
+		D98307F523D389D100A01354 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D98307F723D389D100A01354 /* Localizable.stringsdict */; };
 		D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */; };
 		D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */; };
 		D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D98307EE23D37B1900A01354 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
+		D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailPresenter.swift; sourceTree = "<group>"; };
+		D98307F623D389D100A01354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownPresenter.swift; sourceTree = "<group>"; };
 		D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsRepository.swift; sourceTree = "<group>"; };
 		D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListPresenter.swift; sourceTree = "<group>"; };
@@ -77,6 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D98307ED23D37B0D00A01354 /* CountdownDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D98307EE23D37B1900A01354 /* CountdownDetailView.swift */,
+				D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */,
+			);
+			path = CountdownDetail;
+			sourceTree = "<group>";
+		};
+		D98307F223D3882200A01354 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9DF8BEC23C4703F003645AD /* Assets.xcassets */,
+				D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */,
+				D98307F723D389D100A01354 /* Localizable.stringsdict */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D9C15A1A23C9B020003512B9 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +163,7 @@
 				D9DF8C0923C47099003645AD /* Modules */,
 				D9C15A1A23C9B020003512B9 /* Repositories */,
 				D9C15A2823C9D84D003512B9 /* Common */,
+				D98307F223D3882200A01354 /* Resources */,
 				D9DF8BF423C4703F003645AD /* Info.plist */,
 			);
 			path = countdowns;
@@ -158,8 +184,6 @@
 				D9DF8BE623C4703F003645AD /* AppDelegate.swift */,
 				D9DF8BE823C4703F003645AD /* SceneDelegate.swift */,
 				D9DF8BEA23C4703F003645AD /* AppView.swift */,
-				D9DF8BEC23C4703F003645AD /* Assets.xcassets */,
-				D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -167,6 +191,7 @@
 		D9DF8C0923C47099003645AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D98307ED23D37B0D00A01354 /* CountdownDetail */,
 				D9DF8C0F23C474F2003645AD /* AddCountdown */,
 				D9DF8C0A23C470A7003645AD /* CountdownsList */,
 			);
@@ -275,6 +300,7 @@
 			files = (
 				D9DF8BF323C4703F003645AD /* LaunchScreen.storyboard in Resources */,
 				D9DF8BED23C4703F003645AD /* Assets.xcassets in Resources */,
+				D98307F523D389D100A01354 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +344,7 @@
 				D9EA8FDD23CA436200AB99D4 /* CountdownsMemoryRepository.swift in Sources */,
 				D9EA8FDF23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift in Sources */,
 				D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */,
+				D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */,
 				D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */,
 				D9C15A2723C9D55A003512B9 /* Inject.swift in Sources */,
 				D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */,
@@ -327,6 +354,7 @@
 				D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */,
 				D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */,
 				D9EA8FE223CA43B300AB99D4 /* Countdowns.xcdatamodeld in Sources */,
+				D98307F123D37F2000A01354 /* CountdownDetailPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +377,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D98307F723D389D100A01354 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D98307F623D389D100A01354 /* en */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

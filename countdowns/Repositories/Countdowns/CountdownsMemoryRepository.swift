@@ -25,8 +25,12 @@ extension CountdownsMemoryRepository: CountdownsRepository {
     self.sendCountdowns()
   }
   
+  func countdown(countdownId: UUID) -> Countdown? {
+    self.countdowns.first(where: { $0.countdownId == countdownId })
+  }
+  
   func allCountdowns() -> AnyPublisher<[Countdown], Never> {
-    return self.subject.eraseToAnyPublisher()
+    self.subject.eraseToAnyPublisher()
   }
   
   func removeAll() {

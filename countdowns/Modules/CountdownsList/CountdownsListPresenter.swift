@@ -1,10 +1,13 @@
 import Foundation
 import Combine
 
-struct CountdownViewModel {
-  let countdowndId: UUID
+struct CountdownViewModel: Identifiable {
+  
+  let countdownId: UUID
   let name: String
   let date: String
+  
+  var id: UUID { countdownId }
 }
 
 class CountdownsListPresenter: ObservableObject {
@@ -25,7 +28,7 @@ class CountdownsListPresenter: ObservableObject {
   
   func removeCountdown(at index: Int) {
     let countdown = self.countdowns[index]
-    self.repository.remove(countdownId: countdown.countdowndId)
+    self.repository.remove(countdownId: countdown.countdownId)
   }
 }
 
@@ -34,7 +37,7 @@ private extension CountdownsListPresenter {
   func map(countdowns: [Countdown]) -> [CountdownViewModel] {
     return countdowns.map {
       CountdownViewModel(
-        countdowndId: $0.countdownId,
+        countdownId: $0.countdownId,
         name: $0.name,
         date: self.map(date: $0.date)
       )
@@ -42,25 +45,44 @@ private extension CountdownsListPresenter {
   }
   
   func map(date: Date) -> String {
-    let components = Calendar.current.dateComponents([.month, .day], from: self.trim(date: Date()), to: date)
+    let dateComponents: [Calendar.Component] = [.month, .day]
+    let components = self.components(dateComponents, from: date)
     
-    let months = components.month ?? 0
-    let days = components.day ?? 0
+    let isNegative = dateComponents.reduce(false) { partial, component in
+      let value = components.value(for: component) ?? 0
+      return partial || value < 0
+    }
     
-    return self.map(months: months, days: days)
+    return dateComponents
+      .compactMap { component in
+        self.localize(component: component, value: components.value(for: component))
+      }
+      .joined(separator: " and ")
+      .appending(isNegative ? " since" : " until")
   }
   
-  func map(months: Int, days: Int) -> String {
-    var result = [String]()
-    
-    if months != 0 {
-      result.append("\(months) months")
-    }
-    if days != 0 {
-      result.append("\(days) days")
+  func localize(component: Calendar.Component, value: Int?) -> String? {
+    guard let value = value,
+      value != 0,
+      let localizedKey = self.localizeKey(component: component)
+    else {
+      return nil
     }
     
-    return result.joined(separator: " ")
+    let formatString = NSLocalizedString(localizedKey, comment: "")
+    return String(format: formatString, abs(value))
+  }
+  
+  func localizeKey(component: Calendar.Component) -> String? {
+    switch component {
+    case .month: return "month"
+    case .day: return "day"
+    default: return nil
+    }
+  }
+  
+  func components(_ components: [Calendar.Component],from  date: Date) -> DateComponents {
+    Calendar.current.dateComponents(Set(components), from: self.trim(date: Date()), to: date)
   }
   
   func trim(date: Date) -> Date {

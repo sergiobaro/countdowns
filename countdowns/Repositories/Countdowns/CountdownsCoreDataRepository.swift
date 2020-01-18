@@ -40,8 +40,13 @@ extension CountdownsCoreDataRepository: CountdownsRepository {
     self.save()
   }
   
+  func countdown(countdownId: UUID) -> Countdown? {
+    self.fetch(countdownId: countdownId)
+      .map(self.map(countdownObject:))
+  }
+  
   func allCountdowns() -> AnyPublisher<[Countdown], Never> {
-    return self.subject.eraseToAnyPublisher()
+    self.subject.eraseToAnyPublisher()
   }
   
   func removeAll() {
@@ -72,7 +77,7 @@ private extension CountdownsCoreDataRepository {
   }
   
   func fetchRequest() -> NSFetchRequest<CountdownObject> {
-    return CountdownObject.fetchRequest()
+    CountdownObject.fetchRequest()
   }
   
   func fetch(countdownId: UUID) -> CountdownObject? {

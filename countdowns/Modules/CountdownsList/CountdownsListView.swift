@@ -9,11 +9,13 @@ struct CountdownsListView: View {
   var body: some View {
     NavigationView {
       List {
-        ForEach(self.presenter.countdowns, id: \.name) { countdown in
-          HStack {
-            Text(countdown.name)
-            Spacer()
-            Text(countdown.date)
+        ForEach(self.presenter.countdowns) { countdown in
+          NavigationLink(destination: CountdownDetailView(presenter: .init(countdownId: countdown.countdownId))) {
+            HStack {
+              Text(countdown.name)
+              Spacer()
+              Text(countdown.date)
+            }
           }
         }
         .onDelete(perform: { index in
@@ -25,6 +27,7 @@ struct CountdownsListView: View {
         Button(action: { self.showAddCountdown = true }) {
           Image(systemName: "plus.circle")
             .font(.title)
+            .accentColor(.black)
         }
         .sheet(isPresented: self.$showAddCountdown) {
           AddCountdownView()
