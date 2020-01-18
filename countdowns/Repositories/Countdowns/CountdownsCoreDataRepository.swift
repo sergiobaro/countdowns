@@ -6,7 +6,7 @@ class CountdownsCoreDataRepository {
   
   private let subject = CurrentValueSubject<[Countdown], Never>([])
   
-  lazy var persistantContainer: NSPersistentContainer = {
+  let persistantContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "Countdowns")
     container.loadPersistentStores { store, error in
       if let error = error {

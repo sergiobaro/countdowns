@@ -36,12 +36,35 @@ private extension CountdownsListPresenter {
       CountdownViewModel(
         countdowndId: $0.countdownId,
         name: $0.name,
-        date: "Days: \(self.days(from: $0.date))"
+        date: self.map(date: $0.date)
       )
     }
   }
   
-  func days(from date: Date) -> Int {
-    return Calendar.current.dateComponents([.day], from: Date(), to: date).day ?? 0
+  func map(date: Date) -> String {
+    let components = Calendar.current.dateComponents([.month, .day], from: self.trim(date: Date()), to: date)
+    
+    let months = components.month ?? 0
+    let days = components.day ?? 0
+    
+    return self.map(months: months, days: days)
+  }
+  
+  func map(months: Int, days: Int) -> String {
+    var result = [String]()
+    
+    if months != 0 {
+      result.append("\(months) months")
+    }
+    if days != 0 {
+      result.append("\(days) days")
+    }
+    
+    return result.joined(separator: " ")
+  }
+  
+  func trim(date: Date) -> Date {
+    let components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+    return Calendar.current.date(from: components)!
   }
 }
