@@ -5,6 +5,7 @@ class CountdownDetailPresenter: ObservableObject {
   
   @Published var name = ""
   @Published var date = Date()
+  @Published var footer = ""
   @Published var disabled = true
   
   @Inject private var repository: CountdownsRepository
@@ -17,6 +18,7 @@ class CountdownDetailPresenter: ObservableObject {
     if let countdown = self.countdown {
       self.name = countdown.name
       self.date = countdown.date
+      self.footer = self.footer(for: countdown)
     }
     
     Publishers.CombineLatest($name, $date)
@@ -54,5 +56,19 @@ private extension CountdownDetailPresenter {
     }
     
     return false
+  }
+  
+  func footer(for countdown: Countdown) -> String {
+    let df = DateFormatter()
+    df.timeStyle = .short
+    df.dateStyle = .short
+    
+    var result = "Created At: " + df.string(from: countdown.createdAt)
+    
+    if let updatedAt = countdown.updatedAt {
+      result += "\nUpdated At: " + df.string(from: updatedAt)
+    }
+    
+    return result
   }
 }

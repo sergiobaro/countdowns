@@ -109,7 +109,7 @@ private extension CountdownsCoreDataRepository {
               name: countdownObject.name ?? "",
               date: countdownObject.date ?? Date(),
               createdAt: countdownObject.createdAt ?? Date(),
-              updatedAt: countdownObject.updatedAt ?? Date())
+              updatedAt: countdownObject.updatedAt)
   }
   
   func map(countdown: Countdown) -> CountdownObject {
@@ -118,6 +118,7 @@ private extension CountdownsCoreDataRepository {
     countdownObject.name = countdown.name
     countdownObject.date = countdown.date
     countdownObject.createdAt = countdown.createdAt
+    countdownObject.updatedAt = countdown.updatedAt
     
     return countdownObject
   }

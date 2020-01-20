@@ -6,7 +6,7 @@ struct Countdown {
   var name: String
   var date: Date
   let createdAt: Date
-  var updatedAt: Date
+  var updatedAt: Date?
 }
 
 protocol CountdownsRepository {

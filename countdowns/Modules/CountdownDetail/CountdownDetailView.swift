@@ -11,7 +11,7 @@ struct CountdownDetailView: View {
           Text("Date:")
         }
       }
-      Section {
+      Section(footer: Text(self.presenter.footer)) {
         HStack {
           Spacer()
           Button(action: {

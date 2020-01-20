@@ -15,6 +15,8 @@ struct CountdownsListView: View {
               Text(countdown.name)
               Spacer()
               Text(countdown.date)
+                .font(.system(size: 12.0))
+                .foregroundColor(.gray)
             }
           }
         }
