@@ -1,0 +1,13 @@
+/* 
+  Localized.strings
+  countdowns
+
+  Created by Sergio Baro on 20/01/2020.
+  Copyright © 2020 Sergio Baro. All rights reserved.
+*/
+
+"since" = "since";
+"until" = "until";
+"and" = "and";
+"now" = "now";
+"today" = "today";

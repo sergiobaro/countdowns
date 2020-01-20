@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D969686723D62D4800001E5B /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = D969686923D62D4800001E5B /* Localized.strings */; };
+		D969686B23D62D6D00001E5B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969686A23D62D6D00001E5B /* Localized.swift */; };
 		D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307EE23D37B1900A01354 /* CountdownDetailView.swift */; };
 		D98307F123D37F2000A01354 /* CountdownDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */; };
 		D98307F523D389D100A01354 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D98307F723D389D100A01354 /* Localizable.stringsdict */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D969686823D62D4800001E5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
+		D969686A23D62D6D00001E5B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		D98307EE23D37B1900A01354 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
 		D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailPresenter.swift; sourceTree = "<group>"; };
 		D98307F623D389D100A01354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				D9DF8BEC23C4703F003645AD /* Assets.xcassets */,
 				D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */,
 				D98307F723D389D100A01354 /* Localizable.stringsdict */,
+				D969686923D62D4800001E5B /* Localized.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				D9C15A2623C9D55A003512B9 /* Inject.swift */,
+				D969686A23D62D6D00001E5B /* Localized.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D969686723D62D4800001E5B /* Localized.strings in Resources */,
 				D9DF8BF323C4703F003645AD /* LaunchScreen.storyboard in Resources */,
 				D9DF8BED23C4703F003645AD /* Assets.xcassets in Resources */,
 				D98307F523D389D100A01354 /* Localizable.stringsdict in Resources */,
@@ -353,6 +360,7 @@
 				D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */,
 				D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */,
 				D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */,
+				D969686B23D62D6D00001E5B /* Localized.swift in Sources */,
 				D9EA8FE223CA43B300AB99D4 /* Countdowns.xcdatamodeld in Sources */,
 				D98307F123D37F2000A01354 /* CountdownDetailPresenter.swift in Sources */,
 			);
@@ -377,6 +385,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D969686923D62D4800001E5B /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D969686823D62D4800001E5B /* en */,
+			);
+			name = Localized.strings;
+			sourceTree = "<group>";
+		};
 		D98307F723D389D100A01354 /* Localizable.stringsdict */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -530,7 +546,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sbs.countdowns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -554,7 +570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sbs.countdowns;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

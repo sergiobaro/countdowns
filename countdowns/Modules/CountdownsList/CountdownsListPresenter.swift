@@ -53,12 +53,17 @@ private extension CountdownsListPresenter {
       return partial || value < 0
     }
     
-    return dateComponents
-      .compactMap { component in
-        self.localize(component: component, value: components.value(for: component))
-      }
-      .joined(separator: " and ")
-      .appending(isNegative ? " since" : " until")
+    let localized = dateComponents.compactMap { component in
+      self.localize(component: component, value: components.value(for: component))
+    }
+    
+    if localized.isEmpty {
+      return Localized.today
+    }
+    
+    return localized
+      .joined(separator: Localized.and)
+      .appending(isNegative ? " " + Localized.since : " " + Localized.until)
   }
   
   func localize(component: Calendar.Component, value: Int?) -> String? {
