@@ -21,13 +21,6 @@ struct CountdownDetailView: View {
           }
           .disabled(presenter.disabled)
           Spacer()
-          Button(action: {
-            self.presenter.userSave()
-          }) {
-            Text("Delete")
-              .accentColor(.red)
-          }
-          Spacer()
         }
       }
     }

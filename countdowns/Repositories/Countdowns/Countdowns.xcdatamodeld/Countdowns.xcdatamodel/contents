@@ -5,8 +5,9 @@
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="CountdownObject" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="CountdownObject" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

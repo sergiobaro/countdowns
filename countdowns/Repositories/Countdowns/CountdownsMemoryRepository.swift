@@ -25,6 +25,17 @@ extension CountdownsMemoryRepository: CountdownsRepository {
     self.sendCountdowns()
   }
   
+  func update(countdown: Countdown) {
+    guard let index = self.countdowns.firstIndex(where: { $0.countdownId == countdown.countdownId }) else {
+      return
+    }
+    
+    self.countdowns.remove(at: index)
+    self.countdowns.append(countdown)
+    
+    self.sendCountdowns()
+  }
+  
   func countdown(countdownId: UUID) -> Countdown? {
     self.countdowns.first(where: { $0.countdownId == countdownId })
   }
@@ -43,9 +54,8 @@ extension CountdownsMemoryRepository: CountdownsRepository {
 private extension CountdownsMemoryRepository {
   
   func sendCountdowns() {
-    self.subject.send(self.countdowns.sorted(by: {
-      $0.createdAt > $1.createdAt
-    }))
+    self.countdowns.sort(by: { $0.createdAt > $1.createdAt })
+    self.subject.send(self.countdowns)
   }
   
   func removeCountdown(at index: Int) {

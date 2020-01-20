@@ -62,8 +62,9 @@ private extension CountdownsListPresenter {
     }
     
     return localized
-      .joined(separator: Localized.and)
-      .appending(isNegative ? " " + Localized.since : " " + Localized.until)
+      .joined(separator: " " + Localized.and + " ")
+      .appending(" ")
+      .appending(isNegative ? Localized.since : Localized.until)
   }
   
   func localize(component: Calendar.Component, value: Int?) -> String? {

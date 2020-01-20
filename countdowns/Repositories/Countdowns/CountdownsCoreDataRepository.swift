@@ -40,6 +40,19 @@ extension CountdownsCoreDataRepository: CountdownsRepository {
     self.save()
   }
   
+  func update(countdown: Countdown) {
+    guard let countdownObject = self.fetch(countdownId: countdown.countdownId) else {
+      return
+    }
+    
+    countdownObject.name = countdown.name
+    countdownObject.date = countdown.date
+    countdownObject.updatedAt = countdown.updatedAt
+    
+    self.sendCountdowns()
+    self.save()
+  }
+  
   func countdown(countdownId: UUID) -> Countdown? {
     self.fetch(countdownId: countdownId)
       .map(self.map(countdownObject:))
@@ -95,7 +108,8 @@ private extension CountdownsCoreDataRepository {
     Countdown(countdownId: countdownObject.countdownId ?? UUID(),
               name: countdownObject.name ?? "",
               date: countdownObject.date ?? Date(),
-              createdAt: countdownObject.createdAt ?? Date())
+              createdAt: countdownObject.createdAt ?? Date(),
+              updatedAt: countdownObject.updatedAt ?? Date())
   }
   
   func map(countdown: Countdown) -> CountdownObject {

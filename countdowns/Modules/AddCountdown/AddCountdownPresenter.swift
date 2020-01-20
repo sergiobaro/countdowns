@@ -25,7 +25,8 @@ class AddCountdownPresenter: ObservableObject {
     let countdown = Countdown(countdownId: UUID(),
                               name: self.name,
                               date: self.date,
-                              createdAt: Date())
+                              createdAt: Date(),
+                              updatedAt: Date())
     self.repository.add(countdown: countdown)
   }
   
