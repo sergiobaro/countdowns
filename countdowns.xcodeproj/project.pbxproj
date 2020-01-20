@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9469E2F23D62FF6008DD8C7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D9469E2E23D62FF6008DD8C7 /* Swinject */; };
 		D969686723D62D4800001E5B /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = D969686923D62D4800001E5B /* Localized.strings */; };
 		D969686B23D62D6D00001E5B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969686A23D62D6D00001E5B /* Localized.swift */; };
 		D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307EE23D37B1900A01354 /* CountdownDetailView.swift */; };
@@ -15,7 +16,6 @@
 		D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */; };
 		D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */; };
 		D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */; };
-		D9C15A2323C9D2B5003512B9 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C15A2223C9D2B5003512B9 /* Swinject.framework */; };
 		D9C15A2723C9D55A003512B9 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A2623C9D55A003512B9 /* Inject.swift */; };
 		D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BE623C4703F003645AD /* AppDelegate.swift */; };
 		D9DF8BE923C4703F003645AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BE823C4703F003645AD /* SceneDelegate.swift */; };
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C15A2323C9D2B5003512B9 /* Swinject.framework in Frameworks */,
+				D9469E2F23D62FF6008DD8C7 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,13 +232,15 @@
 				D9DF8BDF23C4703F003645AD /* Sources */,
 				D9DF8BE023C4703F003645AD /* Frameworks */,
 				D9DF8BE123C4703F003645AD /* Resources */,
-				D9C15A2023C9D18F003512B9 /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = countdowns;
+			packageProductDependencies = (
+				D9469E2E23D62FF6008DD8C7 /* Swinject */,
+			);
 			productName = countdowns;
 			productReference = D9DF8BE323C4703F003645AD /* countdowns.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +291,9 @@
 				Base,
 			);
 			mainGroup = D9DF8BDA23C4703F003645AD;
+			packageReferences = (
+				D9469E2D23D62FF6008DD8C7 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = D9DF8BE423C4703F003645AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,29 +324,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D9C15A2023C9D18F003512B9 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"$(SRCROOT)/input.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = Carthage;
-			outputFileListPaths = (
-				"$(SRCROOT)/output.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9DF8BDF23C4703F003645AD /* Sources */ = {
@@ -649,6 +631,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D9469E2D23D62FF6008DD8C7 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D9469E2E23D62FF6008DD8C7 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D9469E2D23D62FF6008DD8C7 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D9EA8FE023CA43B300AB99D4 /* Countdowns.xcdatamodeld */ = {
