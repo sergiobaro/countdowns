@@ -9,17 +9,16 @@ class CountdownDetailPresenter: ObservableObject {
   @Published var disabled = true
   
   @Inject private var repository: CountdownsRepository
-  private var countdown: Countdown?
+  private var countdown: Countdown? {
+    didSet {
+      self.updatedCountdown()
+    }
+  }
   private var cancellables = Set<AnyCancellable>()
   
   init(countdownId: UUID) {
     self.countdown = self.repository.countdown(countdownId: countdownId)
-    
-    if let countdown = self.countdown {
-      self.name = countdown.name
-      self.date = countdown.date
-      self.footer = self.footer(for: countdown)
-    }
+    self.updatedCountdown()
     
     Publishers.CombineLatest($name, $date)
       .sink { [weak self] (name, date) in
@@ -37,6 +36,24 @@ class CountdownDetailPresenter: ObservableObject {
     countdown.name = self.name
     countdown.date = self.date
     countdown.updatedAt = Date()
+    
+    self.countdown = countdown
+    self.updatedCountdown()
+    
+    self.repository.update(countdown: countdown)
+  }
+  
+  func userReset() {
+    guard var countdown = self.countdown else {
+      return
+    }
+    
+    countdown.name = self.name
+    countdown.date = Date()
+    countdown.updatedAt = Date()
+    
+    self.countdown = countdown
+    self.updatedCountdown()
     
     self.repository.update(countdown: countdown)
   }
@@ -70,5 +87,13 @@ private extension CountdownDetailPresenter {
     }
     
     return result
+  }
+  
+  func updatedCountdown() {
+    if let countdown = self.countdown {
+      self.name = countdown.name
+      self.date = countdown.date
+      self.footer = self.footer(for: countdown)
+    }
   }
 }

@@ -22,6 +22,15 @@ struct CountdownDetailView: View {
           .disabled(presenter.disabled)
           Spacer()
         }
+        HStack {
+          Spacer()
+          Button(action: {
+            self.presenter.userReset()
+          }) {
+            Text("Reset")
+          }
+          Spacer()
+        }
       }
     }
   }
