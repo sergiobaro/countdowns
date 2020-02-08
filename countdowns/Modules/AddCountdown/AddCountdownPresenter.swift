@@ -26,7 +26,7 @@ class AddCountdownPresenter: ObservableObject {
                               name: self.name,
                               date: self.date,
                               createdAt: Date(),
-                              updatedAt: Date())
+                              updatedAt: nil)
     self.repository.add(countdown: countdown)
   }
   
