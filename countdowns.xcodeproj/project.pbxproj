@@ -22,7 +22,7 @@
 		D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BEA23C4703F003645AD /* AppView.swift */; };
 		D9DF8BED23C4703F003645AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DF8BEC23C4703F003645AD /* Assets.xcassets */; };
 		D9DF8BF323C4703F003645AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */; };
-		D9DF8BFE23C4703F003645AD /* countdownsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BFD23C4703F003645AD /* countdownsTests.swift */; };
+		D9DF8BFE23C4703F003645AD /* CountdownsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8BFD23C4703F003645AD /* CountdownsTests.swift */; };
 		D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */; };
 		D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DF8C1123C474FE003645AD /* AddCountdownView.swift */; };
 		D9EA8FDD23CA436200AB99D4 /* CountdownsMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EA8FDC23CA436200AB99D4 /* CountdownsMemoryRepository.swift */; };
@@ -59,7 +59,7 @@
 		D9DF8BF223C4703F003645AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9DF8BF423C4703F003645AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DF8BF923C4703F003645AD /* countdownsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = countdownsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9DF8BFD23C4703F003645AD /* countdownsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countdownsTests.swift; sourceTree = "<group>"; };
+		D9DF8BFD23C4703F003645AD /* CountdownsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsTests.swift; sourceTree = "<group>"; };
 		D9DF8BFF23C4703F003645AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9DF8C0C23C470BA003645AD /* CountdownsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListView.swift; sourceTree = "<group>"; };
 		D9DF8C1123C474FE003645AD /* AddCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownView.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		D9DF8BFC23C4703F003645AD /* countdownsTests */ = {
 			isa = PBXGroup;
 			children = (
-				D9DF8BFD23C4703F003645AD /* countdownsTests.swift */,
+				D9DF8BFD23C4703F003645AD /* CountdownsTests.swift */,
 				D9DF8BFF23C4703F003645AD /* Info.plist */,
 			);
 			path = countdownsTests;
@@ -229,6 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9DF8C0223C4703F003645AD /* Build configuration list for PBXNativeTarget "countdowns" */;
 			buildPhases = (
+				D963A02E23EF44FF00ED619A /* Swiftlint */,
 				D9DF8BDF23C4703F003645AD /* Sources */,
 				D9DF8BE023C4703F003645AD /* Frameworks */,
 				D9DF8BE123C4703F003645AD /* Resources */,
@@ -325,6 +326,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D963A02E23EF44FF00ED619A /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9DF8BDF23C4703F003645AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -352,7 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9DF8BFE23C4703F003645AD /* countdownsTests.swift in Sources */,
+				D9DF8BFE23C4703F003645AD /* CountdownsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

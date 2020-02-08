@@ -1,6 +1,8 @@
 import UIKit
 import Swinject
 
+// swiftlint:disable line_length
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   

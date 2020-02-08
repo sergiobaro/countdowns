@@ -48,9 +48,9 @@ private extension CountdownsListPresenter {
     let dateComponents: [Calendar.Component] = [.month, .day]
     let components = self.components(dateComponents, from: date)
     
-    let isNegative = dateComponents.reduce(false) { partial, component in
+    let isNegative = dateComponents.contains { component in
       let value = components.value(for: component) ?? 0
-      return partial || value < 0
+      return value < 0
     }
     
     let localized = dateComponents.compactMap { component in
@@ -87,7 +87,7 @@ private extension CountdownsListPresenter {
     }
   }
   
-  func components(_ components: [Calendar.Component],from  date: Date) -> DateComponents {
+  func components(_ components: [Calendar.Component], from  date: Date) -> DateComponents {
     Calendar.current.dateComponents(Set(components), from: self.trim(date: Date()), to: date)
   }
   

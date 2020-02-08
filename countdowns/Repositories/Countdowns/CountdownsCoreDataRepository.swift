@@ -8,7 +8,7 @@ class CountdownsCoreDataRepository {
   
   let persistantContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "Countdowns")
-    container.loadPersistentStores { store, error in
+    container.loadPersistentStores { _, error in
       if let error = error {
         print(error)
       }
@@ -25,7 +25,7 @@ class CountdownsCoreDataRepository {
 extension CountdownsCoreDataRepository: CountdownsRepository {
   
   func add(countdown: Countdown) {
-    let _ = self.map(countdown: countdown)
+    _ = self.map(countdown: countdown)
     self.sendCountdowns()
     self.save()
   }

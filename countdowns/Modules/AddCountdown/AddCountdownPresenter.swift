@@ -15,7 +15,7 @@ class AddCountdownPresenter: ObservableObject {
     self.date = Calendar.current.date(from: components)!
     
     Publishers.CombineLatest($name, $date)
-      .sink { (name, date) in
+      .sink { (name, _) in
         self.disabled = name.isEmpty
       }
       .store(in: &cancellables)

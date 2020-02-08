@@ -24,9 +24,7 @@ class MainContainer {
 struct Inject<Value> {
   
   var wrappedValue: Value {
-    get {
-      MainContainer.shared.resolve(Value.self)!
-    }
+    MainContainer.shared.resolve(Value.self)!
   }
   
 }

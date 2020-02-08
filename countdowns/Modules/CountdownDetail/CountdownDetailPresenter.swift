@@ -76,14 +76,14 @@ private extension CountdownDetailPresenter {
   }
   
   func footer(for countdown: Countdown) -> String {
-    let df = DateFormatter()
-    df.timeStyle = .short
-    df.dateStyle = .short
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeStyle = .short
+    dateFormatter.dateStyle = .short
     
-    var result = "Created At: " + df.string(from: countdown.createdAt)
+    var result = "Created At: " + dateFormatter.string(from: countdown.createdAt)
     
     if let updatedAt = countdown.updatedAt {
-      result += "\nUpdated At: " + df.string(from: updatedAt)
+      result += "\nUpdated At: " + dateFormatter.string(from: updatedAt)
     }
     
     return result
