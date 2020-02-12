@@ -35,7 +35,7 @@ class CountdownsListPresenter: ObservableObject {
 private extension CountdownsListPresenter {
   
   func map(countdowns: [Countdown]) -> [CountdownViewModel] {
-    return countdowns.map {
+    countdowns.map {
       CountdownViewModel(
         countdownId: $0.countdownId,
         name: $0.name,
@@ -45,54 +45,10 @@ private extension CountdownsListPresenter {
   }
   
   func map(date: Date) -> String {
-    let dateComponents: [Calendar.Component] = [.month, .day]
-    let components = self.components(dateComponents, from: date)
+    let formatter = DateComponentsFormatter()
+    formatter.unitsStyle = .full
+    formatter.allowedUnits = [.year, .month, .weekOfMonth, .day]
     
-    let isNegative = dateComponents.contains { component in
-      let value = components.value(for: component) ?? 0
-      return value < 0
-    }
-    
-    let localized = dateComponents.compactMap { component in
-      self.localize(component: component, value: components.value(for: component))
-    }
-    
-    if localized.isEmpty {
-      return Localized.today
-    }
-    
-    return localized
-      .joined(separator: " " + Localized.and + " ")
-      .appending(" ")
-      .appending(isNegative ? Localized.since : Localized.until)
-  }
-  
-  func localize(component: Calendar.Component, value: Int?) -> String? {
-    guard let value = value,
-      value != 0,
-      let localizedKey = self.localizeKey(component: component)
-    else {
-      return nil
-    }
-    
-    let formatString = NSLocalizedString(localizedKey, comment: "")
-    return String(format: formatString, abs(value))
-  }
-  
-  func localizeKey(component: Calendar.Component) -> String? {
-    switch component {
-    case .month: return "month"
-    case .day: return "day"
-    default: return nil
-    }
-  }
-  
-  func components(_ components: [Calendar.Component], from  date: Date) -> DateComponents {
-    Calendar.current.dateComponents(Set(components), from: self.trim(date: Date()), to: date)
-  }
-  
-  func trim(date: Date) -> Date {
-    let components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-    return Calendar.current.date(from: components)!
+    return formatter.string(from: Date(), to: date)!
   }
 }

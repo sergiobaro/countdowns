@@ -12,7 +12,6 @@
 		D969686B23D62D6D00001E5B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969686A23D62D6D00001E5B /* Localized.swift */; };
 		D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307EE23D37B1900A01354 /* CountdownDetailView.swift */; };
 		D98307F123D37F2000A01354 /* CountdownDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */; };
-		D98307F523D389D100A01354 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = D98307F723D389D100A01354 /* Localizable.stringsdict */; };
 		D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */; };
 		D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */; };
 		D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */; };
@@ -45,7 +44,6 @@
 		D969686A23D62D6D00001E5B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		D98307EE23D37B1900A01354 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
 		D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailPresenter.swift; sourceTree = "<group>"; };
-		D98307F623D389D100A01354 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownPresenter.swift; sourceTree = "<group>"; };
 		D9C15A1C23C9B030003512B9 /* CountdownsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsRepository.swift; sourceTree = "<group>"; };
 		D9C15A1E23C9B15B003512B9 /* CountdownsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsListPresenter.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				D9DF8BEC23C4703F003645AD /* Assets.xcassets */,
 				D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */,
-				D98307F723D389D100A01354 /* Localizable.stringsdict */,
 				D969686923D62D4800001E5B /* Localized.strings */,
 			);
 			path = Resources;
@@ -313,7 +310,6 @@
 				D969686723D62D4800001E5B /* Localized.strings in Resources */,
 				D9DF8BF323C4703F003645AD /* LaunchScreen.storyboard in Resources */,
 				D9DF8BED23C4703F003645AD /* Assets.xcassets in Resources */,
-				D98307F523D389D100A01354 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,14 +391,6 @@
 				D969686823D62D4800001E5B /* en */,
 			);
 			name = Localized.strings;
-			sourceTree = "<group>";
-		};
-		D98307F723D389D100A01354 /* Localizable.stringsdict */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D98307F623D389D100A01354 /* en */,
-			);
-			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		D9DF8BF123C4703F003645AD /* LaunchScreen.storyboard */ = {
