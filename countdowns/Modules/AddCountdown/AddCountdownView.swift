@@ -7,12 +7,11 @@ struct AddCountdownView: View {
   var body: some View {
     NavigationView {
       Form {
-        Section {
-          TextField("Name", text: $presenter.name)
-          DatePicker(selection: $presenter.date, displayedComponents: .date) {
-            Text("Date:")
-          }
-        }
+        CountdownView(
+          name: $presenter.name,
+          date: $presenter.date
+        )
+        
         Section {
           HStack {
             Spacer()
@@ -21,7 +20,7 @@ struct AddCountdownView: View {
             }) {
               Text("Add")
             }
-            .disabled(presenter.disabled)
+            .disabled(presenter.addDisabled)
             Spacer()
           }
         }

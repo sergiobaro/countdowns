@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D913561123F5C95F000852E8 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D913561023F5C95F000852E8 /* CountdownView.swift */; };
 		D9469E2F23D62FF6008DD8C7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D9469E2E23D62FF6008DD8C7 /* Swinject */; };
 		D969686723D62D4800001E5B /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = D969686923D62D4800001E5B /* Localized.strings */; };
 		D969686B23D62D6D00001E5B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969686A23D62D6D00001E5B /* Localized.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D913561023F5C95F000852E8 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		D969686823D62D4800001E5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		D969686A23D62D6D00001E5B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		D98307EE23D37B1900A01354 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D913561223F5CB9D000852E8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D9C15A2623C9D55A003512B9 /* Inject.swift */,
+				D969686A23D62D6D00001E5B /* Localized.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D913561323F5CBA1000852E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D913561023F5C95F000852E8 /* CountdownView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D98307ED23D37B0D00A01354 /* CountdownDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +153,8 @@
 		D9C15A2823C9D84D003512B9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				D9C15A2623C9D55A003512B9 /* Inject.swift */,
-				D969686A23D62D6D00001E5B /* Localized.swift */,
+				D913561323F5CBA1000852E8 /* Views */,
+				D913561223F5CB9D000852E8 /* Utils */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -358,6 +377,7 @@
 				D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */,
 				D9DF8BE923C4703F003645AD /* SceneDelegate.swift in Sources */,
 				D9DF8C0D23C470BA003645AD /* CountdownsListView.swift in Sources */,
+				D913561123F5C95F000852E8 /* CountdownView.swift in Sources */,
 				D9C15A1F23C9B15B003512B9 /* CountdownsListPresenter.swift in Sources */,
 				D9DF8BEB23C4703F003645AD /* AppView.swift in Sources */,
 				D969686B23D62D6D00001E5B /* Localized.swift in Sources */,

@@ -4,8 +4,8 @@ import Combine
 class AddCountdownPresenter: ObservableObject {
   
   @Published var name = ""
-  @Published var date: Date
-  @Published var disabled = true
+  @Published var date = Date()
+  @Published var addDisabled = true
   
   @Inject private var repository: CountdownsRepository
   private var cancellables = Set<AnyCancellable>()
@@ -16,17 +16,19 @@ class AddCountdownPresenter: ObservableObject {
     
     Publishers.CombineLatest($name, $date)
       .sink { (name, _) in
-        self.disabled = name.isEmpty
+        self.addDisabled = name.isEmpty
       }
       .store(in: &cancellables)
   }
   
   func userAdd() {
-    let countdown = Countdown(countdownId: UUID(),
-                              name: self.name,
-                              date: self.date,
-                              createdAt: Date(),
-                              updatedAt: nil)
+    let countdown = Countdown(
+      countdownId: UUID(),
+      name: self.name,
+      date: self.date,
+      createdAt: Date(),
+      updatedAt: nil
+    )
     self.repository.add(countdown: countdown)
   }
   

@@ -1,36 +1,15 @@
 import SwiftUI
 
 struct CountdownDetailView: View {
-  @ObservedObject var presenter: CountdownDetailPresenter
   
-  @State var option = 0
+  @ObservedObject var presenter: CountdownDetailPresenter
   
   var body: some View {
     Form {
-      Section {
-        TextField("Name", text: $presenter.name)
-      }
-      
-      Section {
-        Picker(selection: $presenter.dateOption, label: Text("")) {
-          Text("By date").tag(0)
-          Text("By number").tag(1)
-        }.pickerStyle(SegmentedPickerStyle())
-        
-        if presenter.dateOption == 0 {
-          DatePicker(selection: $presenter.date, displayedComponents: .date) {
-            Text("Date:")
-          }
-        } else {
-          Stepper(onIncrement: {
-            self.presenter.numberOfDays += 1
-          }, onDecrement: {
-            self.presenter.numberOfDays -= 1
-          }) {
-            Text("\(presenter.numberOfDays) days")
-          }
-        }
-      }
+      CountdownView(
+        name: $presenter.name,
+        date: $presenter.date
+      )
       
       Section(footer: Text(self.presenter.footer)) {
         HStack {
@@ -40,7 +19,7 @@ struct CountdownDetailView: View {
           }) {
             Text("Save")
           }
-          .disabled(presenter.disabled)
+          .disabled(presenter.saveDisabled)
           Spacer()
         }
         HStack {
@@ -48,7 +27,7 @@ struct CountdownDetailView: View {
           Button(action: {
             self.presenter.userReset()
           }) {
-            Text("Reset")
+            Text("Reset to now")
           }
           Spacer()
         }
