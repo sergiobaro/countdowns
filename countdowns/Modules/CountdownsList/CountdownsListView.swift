@@ -5,12 +5,13 @@ struct CountdownsListView: View {
   @ObservedObject var presenter = CountdownsListPresenter()
   
   @State private var showAddCountdown = false
+  @State private var showDetail = false
   
   var body: some View {
     NavigationView {
       List {
         ForEach(self.presenter.countdowns) { countdown in
-          NavigationLink(destination: CountdownDetailView(presenter: .init(countdownId: countdown.countdownId))) {
+          Button(action: { self.showDetail.toggle() }) {
             HStack {
               Text(countdown.name)
               Spacer()
@@ -19,6 +20,9 @@ struct CountdownsListView: View {
                 .foregroundColor(.gray)
             }
           }
+          .sheet(isPresented: self.$showDetail, content: {
+            CountdownDetailView(presenter: .init(countdownId: countdown.countdownId))
+          })
         }
         .onDelete(perform: { index in
           self.presenter.removeCountdown(at: index.first!)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D908E8E0240AAC2100D55900 /* RelativeDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908E8DF240AAC2100D55900 /* RelativeDateFormatter.swift */; };
+		D908E8E3240AD53A00D55900 /* CountdownDetailFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908E8E2240AD53A00D55900 /* CountdownDetailFooter.swift */; };
 		D913561123F5C95F000852E8 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D913561023F5C95F000852E8 /* CountdownView.swift */; };
 		D9469E2F23D62FF6008DD8C7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D9469E2E23D62FF6008DD8C7 /* Swinject */; };
 		D969686723D62D4800001E5B /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = D969686923D62D4800001E5B /* Localized.strings */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D908E8DF240AAC2100D55900 /* RelativeDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeDateFormatter.swift; sourceTree = "<group>"; };
+		D908E8E2240AD53A00D55900 /* CountdownDetailFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailFooter.swift; sourceTree = "<group>"; };
 		D913561023F5C95F000852E8 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		D969686823D62D4800001E5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		D969686A23D62D6D00001E5B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D908E8DE240AAC0200D55900 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				D908E8DF240AAC2100D55900 /* RelativeDateFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 		D913561223F5CB9D000852E8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				D98307EE23D37B1900A01354 /* CountdownDetailView.swift */,
+				D908E8E2240AD53A00D55900 /* CountdownDetailFooter.swift */,
 				D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */,
 			);
 			path = CountdownDetail;
@@ -153,6 +166,7 @@
 		D9C15A2823C9D84D003512B9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D908E8DE240AAC0200D55900 /* Formatters */,
 				D913561323F5CBA1000852E8 /* Views */,
 				D913561223F5CB9D000852E8 /* Utils */,
 			);
@@ -370,7 +384,9 @@
 				D9EA8FDD23CA436200AB99D4 /* CountdownsMemoryRepository.swift in Sources */,
 				D9EA8FDF23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift in Sources */,
 				D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */,
+				D908E8E3240AD53A00D55900 /* CountdownDetailFooter.swift in Sources */,
 				D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */,
+				D908E8E0240AAC2100D55900 /* RelativeDateFormatter.swift in Sources */,
 				D9C15A1D23C9B030003512B9 /* CountdownsRepository.swift in Sources */,
 				D9C15A2723C9D55A003512B9 /* Inject.swift in Sources */,
 				D9DF8C1223C474FE003645AD /* AddCountdownView.swift in Sources */,

@@ -5,33 +5,20 @@ struct CountdownDetailView: View {
   @ObservedObject var presenter: CountdownDetailPresenter
   
   var body: some View {
-    Form {
-      CountdownView(
-        name: $presenter.name,
-        date: $presenter.date
-      )
-      
-      Section(footer: Text(self.presenter.footer)) {
-        HStack {
-          Spacer()
-          Button(action: {
-            self.presenter.userSave()
-          }) {
-            Text("Save")
-          }
-          .disabled(presenter.saveDisabled)
-          Spacer()
-        }
-        HStack {
-          Spacer()
-          Button(action: {
-            self.presenter.userReset()
-          }) {
-            Text("Reset to now")
-          }
-          Spacer()
-        }
+    NavigationView {
+      Form {
+        CountdownView(
+          name: $presenter.name,
+          date: $presenter.date
+        )
+        CountdownDetailFooter(
+          footer: self.$presenter.footer,
+          saveDisabled: self.$presenter.saveDisabled,
+          onSave: self.presenter.userSave,
+          onReset: self.presenter.userReset
+        )
       }
+      .navigationBarTitle("Edit Countdown")
     }
   }
 }
