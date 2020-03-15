@@ -13,6 +13,7 @@
 		D9469E2F23D62FF6008DD8C7 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D9469E2E23D62FF6008DD8C7 /* Swinject */; };
 		D969686723D62D4800001E5B /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = D969686923D62D4800001E5B /* Localized.strings */; };
 		D969686B23D62D6D00001E5B /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = D969686A23D62D6D00001E5B /* Localized.swift */; };
+		D97038B9241E2F95000CB572 /* Date+components.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97038B8241E2F95000CB572 /* Date+components.swift */; };
 		D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307EE23D37B1900A01354 /* CountdownDetailView.swift */; };
 		D98307F123D37F2000A01354 /* CountdownDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */; };
 		D9C15A1923C9ADB3003512B9 /* AddCountdownPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */; };
@@ -48,6 +49,7 @@
 		D913561023F5C95F000852E8 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		D969686823D62D4800001E5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		D969686A23D62D6D00001E5B /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		D97038B8241E2F95000CB572 /* Date+components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+components.swift"; sourceTree = "<group>"; };
 		D98307EE23D37B1900A01354 /* CountdownDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailView.swift; sourceTree = "<group>"; };
 		D98307F023D37F2000A01354 /* CountdownDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownDetailPresenter.swift; sourceTree = "<group>"; };
 		D9C15A1823C9ADB3003512B9 /* AddCountdownPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCountdownPresenter.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				D9C15A2623C9D55A003512B9 /* Inject.swift */,
 				D969686A23D62D6D00001E5B /* Localized.swift */,
+				D97038B8241E2F95000CB572 /* Date+components.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				D9EA8FDD23CA436200AB99D4 /* CountdownsMemoryRepository.swift in Sources */,
 				D9EA8FDF23CA438C00AB99D4 /* CountdownsCoreDataRepository.swift in Sources */,
 				D9DF8BE723C4703F003645AD /* AppDelegate.swift in Sources */,
+				D97038B9241E2F95000CB572 /* Date+components.swift in Sources */,
 				D908E8E3240AD53A00D55900 /* CountdownDetailFooter.swift in Sources */,
 				D98307EF23D37B1900A01354 /* CountdownDetailView.swift in Sources */,
 				D908E8E0240AAC2100D55900 /* RelativeDateFormatter.swift in Sources */,

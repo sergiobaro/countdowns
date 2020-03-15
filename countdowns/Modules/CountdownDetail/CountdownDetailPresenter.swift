@@ -65,22 +65,11 @@ private extension CountdownDetailPresenter {
     guard let countdown = self.countdown else {
       return true
     }
-    if name == countdown.name && self.equal(date: date, to: countdown.date) {
+    if name == countdown.name && date.equalTo(countdown.date, granularity: .day) {
       return true
     }
     
     return false
-  }
-  
-  func equal(date: Date, to toDate: Date) -> Bool {
-    let trimmedDate = self.trimDate(date)
-    let trimmedToDate = self.trimDate(toDate)
-    return Calendar.current.compare(trimmedDate, to: trimmedToDate, toGranularity: .day) == .orderedSame
-  }
-  
-  func trimDate(_ date: Date) -> Date {
-    let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
-    return Calendar.current.date(from: components)!
   }
   
   func footer(for countdown: Countdown) -> String {

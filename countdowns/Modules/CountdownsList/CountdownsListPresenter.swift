@@ -47,11 +47,5 @@ private extension CountdownsListPresenter {
   func map(date: Date) -> String {
     let formatter = RelativeDateFormatter()
     return formatter.string(date: date)
-    
-//    let formatter = DateComponentsFormatter()
-//    formatter.unitsStyle = .full
-//    formatter.allowedUnits = [.year, .month, .weekOfMonth, .day]
-//
-//    return formatter.string(from: Date(), to: date)!
   }
 }
