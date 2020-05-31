@@ -5,7 +5,7 @@ struct RelativeDateFormatter {
   let components: Set<Calendar.Component>
   
   init() {
-    self.components = [.year, .month, .day]
+    self.init(components: [.year, .month, .day])
   }
   
   init(components: Set<Calendar.Component>) {
